@@ -1,1 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+   name: mynginx
+spec:
+  replicas: 2
+  selector:
+       app: mynginx
+  template:
+  metadata:
+    labels:
+      app: mynginx
+spec:
+    containers:
+    - name: mynginx
+      image: kparashar/mynginx
+      ports:
+      - containerPort: 80
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mynginx-service
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+  type: NodePort
+  selector:
+     app: mynginx
 
