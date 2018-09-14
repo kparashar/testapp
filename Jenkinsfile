@@ -8,10 +8,10 @@ node {
    
      stage "Build"
 
-        sh "docker build -t ${imageName} -f Dockerfile 
+        sh "docker build -t ${imageName} -f Dockerfile" 
      
      stage "Push"
-        sh "docker login -u kparashar -p Se1fc@re
+        sh "docker login -u kparashar -p Se1fc@re"
         sh "docker tag ${imageName} kparashar/${imageName}"
         sh "docker push kparashar/${imageName}"
 
