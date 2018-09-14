@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: mynginx
+   name: mynginx
 spec:
   replicas: 2
   selector:
@@ -10,7 +10,7 @@ spec:
   metadata:
     labels:
       app: mynginx
-  spec:
+spec:
     containers:
     - name: mynginx
       image: kparashar/mynginx
