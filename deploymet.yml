@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: mynginx
+spec:
+  replicas: 2
+  selector:
+       app: mynginx
+  template:
+  metadata:
+    labels:
+      app: mynginx
+  spec:
+    containers:
+    - name: mynginx
+      image: kparashar/mynginx
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mynginx-service
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      nodePort: 30080
+  type: NodePort
+  selector:
+     app: mynginx
