@@ -1,5 +1,7 @@
 node {
-
+   
+    checkout scm
+   
     env.DOCKER_API_VERSION="1.23"
     tag = "${BUILD_NUMBER}"
     appName = "mynginx"
@@ -8,7 +10,7 @@ node {
    
      stage "Build"
 
-        sh "docker build -t ${imageName} ." 
+        sh "docker build -t ${imageName} myngnix/Dockerfile" 
      
      stage "Push"
         sh "docker login -u kparashar -p Se1fc@re"
