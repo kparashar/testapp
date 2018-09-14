@@ -14,5 +14,5 @@ node {
         sh "docker tag ${imageName} kparashar/${imageName}"
         sh "docker push kparashar/${imageName}"
      stage "Deploy"
-        sh "kubectl apply -f  deployment.yaml"
+        sh "kubectl create -f  deployment.yaml"
 }
