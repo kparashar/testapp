@@ -8,7 +8,6 @@ node {
     imageName = "${appName}:latest"
     env.BUILDIMG=imageName
      stage "Build"
-        sh "docker login -u kparashar -p Se1fc@re"
         sh "docker build -t ${imageName} -f myngnix/Dockerfile myngnix" 
      stage "Push"
         sh "docker login -u kparashar -p Se1fc@re"
