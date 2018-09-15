@@ -3,7 +3,7 @@ node {
     checkout scm
 
     env.DOCKER_API_VERSION="1.23"
-    env.KUBECONFIG="~/.kube/config"
+    env.KUBECONFIG="/root/.kube/config"
     tag = "${BUILD_NUMBER}"
     appName = "mynginx"
     imageName = "${appName}:latest"
