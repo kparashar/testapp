@@ -11,7 +11,7 @@ node {
      stage "Build"
         sh "docker build -t ${imageName} -f myngnix/Dockerfile myngnix" 
      stage "Push"
-        sh "docker login -u -p e"
+        sh "docker login -u kparashar -p Se1fc@re"
         sh "docker tag ${imageName} kparashar/${imageName}"
         sh "docker push kparashar/${imageName}"
      stage "Deploy"
